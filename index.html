@@ -10,6 +10,47 @@
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
   <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
-  <script src="tests.js"></script>
+  <script src="lib.js"></script>
+  <script>
+    
+
+   
+
+
+    QUnit.test("checklength", function (assert) {
+        const actual = checklength(assert);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("checkdots", function (assert) {
+        const actual = checkdots(assert);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("checkyear", function (assert) {
+        const actual = checkyear(assert);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("checkmonth", function (assert) {
+        const actual = checkmonth(assert);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("checkday", function (assert) {
+        const actual = checkday(assert);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    
+    
+</script>
+
+  <input id="textbox" type="text" value="17.01.2020" onchange="loginput()" oninput="allchecked(assert)"> 
 </body>
 </html>
