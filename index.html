@@ -7,50 +7,58 @@
   <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
 </head>
 <body>
+    
+  Dato: 
+  <input id="textbox" type="text" value="29.02.2020" onchange="loginput()" oninput="allchecked(assert)"> 
+
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
   <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
   <script src="lib.js"></script>
   <script>
-    
+    var dato = document.getElementById('textbox').value;
 
-   
-
+    QUnit.test("allcheck", function (assert) {
+      const isValid = allchecked(dato);
+    assert.equal(isValid, true);
+    });
 
     QUnit.test("checklength", function (assert) {
-        const actual = checklength(assert);
+        const actual = checklength(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("checkdots", function (assert) {
-        const actual = checkdots(assert);
+        const actual = checkdots(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("checkyear", function (assert) {
-        const actual = checkyear(assert);
+        const actual = checkyear(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("checkmonth", function (assert) {
-        const actual = checkmonth(assert);
+        const actual = checkmonth(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("checkday", function (assert) {
-        const actual = checkday(assert);
+        const actual = checkday(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     
+
+    // 17.01.2020
     
 </script>
 
-  <input id="textbox" type="text" value="17.01.2020" onchange="loginput()" oninput="allchecked(assert)"> 
+  
 </body>
 </html>
