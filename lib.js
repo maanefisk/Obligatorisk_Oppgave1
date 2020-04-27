@@ -1,4 +1,6 @@
 
+
+
 //logger informasjonen på onchange
 function loginput() {
 console.log(textbox.value);
