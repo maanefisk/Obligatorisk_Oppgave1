@@ -96,37 +96,37 @@
     });
 
     QUnit.test("valid 29", function (assert) {
-        const actual = checkday('29.02.2020');
+        const actual = checkday(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("false 29", function (assert) {
-        const actual = checkday('29.02.2019');
+        const actual = checkday(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("valid 30", function (assert) {
-        const actual = checkday('30.04.2020');
+        const actual = checkday(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("false 30", function (assert) {
-        const actual = checkday('30.02.2020');
+        const actual = checkday(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("valid 31", function (assert) {
-        const actual = checkday('31.10.2020');
+        const actual = checkday(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("false 31", function (assert) {
-        const actual = checkday('31.04.2020');
+        const actual = checkday(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
