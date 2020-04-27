@@ -9,7 +9,7 @@
 <body>
     
   Dato: 
-  <input id="textbox" type="text" value="29.02.2020" onchange="allchecked(dato)" oninput="loginput()"> 
+  <input id="textbox" type="text" value="29.02.2020" onchange="datevalid(dato)" oninput="loginput()"> 
 
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
@@ -18,8 +18,8 @@
   <script>
     var dato = document.getElementById('textbox').value;
 
-    QUnit.test("allcheck", function (assert) {
-      const isValid = allchecked(dato);
+    QUnit.test("datevalid", function (assert) {
+      const isValid = datevalid(dato);
     assert.equal(isValid, true);
     });
 
@@ -53,9 +53,85 @@
         assert.equal(actual, expected);
     });
 
+    QUnit.test("isitleapyear", function (assert) {
+        const actual = isitleapyear(dato);
+        const expected = true;
+        assert.equal(actual, expected);
+    });
     
+    QUnit.test("falselength", function (assert) {
+        const actual = checklength(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
 
-    // 17.01.2020
+    QUnit.test("falsedots", function (assert) {
+        const actual = checkdots(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("falseyear", function (assert) {
+        const actual = checkyear(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("falsemonth", function (assert) {
+        const actual = checkmonth(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("falseday", function (assert) {
+        const actual = checkday(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("falseleapyear", function (assert) {
+        const actual = isitleapyear(dato);
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("valid 29", function (assert) {
+        const actual = checkday('29.02.2020');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("false 29", function (assert) {
+        const actual = checkday('29.02.2019');
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("valid 30", function (assert) {
+        const actual = checkday('30.04.2020');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("false 30", function (assert) {
+        const actual = checkday('30.02.2020');
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("valid 31", function (assert) {
+        const actual = checkday('31.10.2020');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("false 31", function (assert) {
+        const actual = checkday('31.04.2020');
+        const expected = false;
+        assert.equal(actual, expected);
+    });
+
+    // original date note for self: 17.01.2020
     
 </script>
 

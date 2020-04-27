@@ -1,7 +1,4 @@
 
-
-
-
 //logger informasjonen på onchange
 function loginput() {
 console.log(textbox.value);
@@ -9,7 +6,7 @@ console.log(textbox.value);
   
 
 // Skjekker alle sammen
-function allchecked(dato) {
+function datevalid(dato) {
     return checklength(dato) &&
     checkdots(dato) &&
     checkyear(dato) &&
@@ -58,3 +55,10 @@ function allchecked(dato) {
     day == '30' && ( !isFebruary ) ||
     day == '31' && !isFebruary && !isMonthshort;
       }
+// Skjekker bare om det er skuddår
+  function isitleapyear(dato) {
+    var year = dato.substring(6,10);
+    return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+    }
+
+ 
