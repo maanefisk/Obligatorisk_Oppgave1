@@ -19,7 +19,7 @@
     //var dato = document.getElementById('textbox').value; (Use dato parameter instead of written date to insert value from input. Does not update realtime!)
 
     QUnit.test("Does the date contain the right qualities?", function (assert) {
-      const isValid = isDateValid('17.01.2020');
+      const isValid = isDateValid(17.01.2020);
     assert.equal(isValid, true);
     });
 
@@ -30,103 +30,103 @@
     });
 
     QUnit.test("Does the date contain dots?", function (assert) {
-        const actual = doesItContainDots('31.10.2020');
+        const actual = doesItContainDots(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("Is the date a valid year number between 0000 and 9999?", function (assert) {
-        const actual = isYearNumberValid('31.10.2020');
+        const actual = isYearNumberValid(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("Is it a valid month?", function (assert) {
-        const actual = isItAValidMonth('31.10.2020');
+        const actual = isItAValidMonth(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("Is this a valid day?", function (assert) {
-        const actual = isItAValidDay('31.10.2020');
+        const actual = isItAValidDay(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("Is it leap year?", function (assert) {
-        const actual = isitleapyear('31.10.2020');
+        const actual = isitleapyear(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
     
     QUnit.test("The length of this date is not 10 digits/letters long.", function (assert) {
-        const actual = isLengthTenDigitsLong('31.10.2');
+        const actual = isLengthTenDigitsLong(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The date does not contain dots", function (assert) {
-        const actual = doesItContainDots('31102020');
+        const actual = doesItContainDots(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("This is not a year with 4 digits", function (assert) {
-        const actual = isYearNumberValid('31.10.20205');
+        const actual = isYearNumberValid(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("This is not a valid month", function (assert) {
-        const actual = isItAValidMonth('31.13.2020');
+        const actual = isItAValidMonth(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("This is not a valid day.", function (assert) {
-        const actual = isItAValidDay('41.10.2020');
+        const actual = isItAValidDay(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The year is not a leap year", function (assert) {
-        const actual = isitleapyear('31.10.2019');
+        const actual = isitleapyear(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("This date, 29 is a valid date in February", function (assert) {
-        const actual = isItAValidDay('29.02.2020');
+        const actual = isItAValidDay(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("This date, 29 is not a valid date in February", function (assert) {
-        const actual = isItAValidDay('29.02.2021');
+        const actual = isItAValidDay(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The 30th is valid on this date", function (assert) {
-        const actual = isItAValidDay('30.10.2020');
+        const actual = isItAValidDay(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The 30th is false on this date", function (assert) {
-        const actual = isItAValidDay('30.02.2020');
+        const actual = isItAValidDay(dato);
         const expected = false;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The 31th is valid on this date", function (assert) {
-        const actual = isItAValidDay('31.10.2020');
+        const actual = isItAValidDay(dato);
         const expected = true;
         assert.equal(actual, expected);
     });
 
     QUnit.test("The 31th is false on this date", function (assert) {
-        const actual = isItAValidDay('31.02.2020');
+        const actual = isItAValidDay(dato);
         const expected = false;
         assert.equal(actual, expected);
     });

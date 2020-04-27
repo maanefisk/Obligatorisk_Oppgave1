@@ -8,32 +8,32 @@ console.log(textbox.value);
   
 
 // Skjekker alle sammen
-function datevalid(dato) {
-    return checklength(dato) &&
-    checkdots(dato) &&
-    checkyear(dato) &&
-    checkmonth(dato) &&
-    checkday(dato);
+function isDateValid(dato) {
+    return isLengthTenDigitsLong(dato) &&
+    doesItContainDots(dato) &&
+    isYearNumberValid(dato) &&
+    isItAValidMonth(dato) &&
+    isItAValidDay(dato);
   }
   
   // skjekker lengden
-  function checklength(dato) {
+  function isLengthTenDigitsLong(dato) {
     return dato.length == 10
     }
   
     // skjekker punktum
-  function checkdots(dato) {
+  function doesItContainDots(dato) {
     return dato[2]=='.' && dato[5] == '.';
     }
   
     // skjekker året
-  function checkyear(dato) {
+  function isYearNumberValid(dato) {
   var year = dato.substring(6);
   return year.length === 4 && year >= '0000' && year <= '9999'
   }
   
   // skjekker måneden
-  function checkmonth(dato) {
+  function isItAValidMonth(dato) {
     var month = dato.substring(3,5);
     return month.length === 2 && month >= '01' && month <= '12'
   }
@@ -44,7 +44,7 @@ function datevalid(dato) {
 // 31 er lovlig for januar, mars, mai, juli, august, oktober og desember
 
   // skjekker dagsdatoen + gyldighet
-  function checkday(dato) {
+  function isItAValidDay(dato) {
     var day = dato.substring(0,2);
     var month = dato.substring(3,5);
     var year = dato.substring(6,10);
