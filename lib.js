@@ -13,7 +13,8 @@ function isDateValid(dato) {
     doesItContainDots(dato) &&
     isYearNumberValid(dato) &&
     isItAValidMonth(dato) &&
-    isItAValidDay(dato);
+    isItAValidDay(dato) &&
+    isitleapyear(dato);
   }
   
   // skjekker lengden
